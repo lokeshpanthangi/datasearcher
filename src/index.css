@@ -2,95 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Research Assistant Design System - Academic Excellence */
 
 @layer base {
   :root {
+    /* Base colors - Professional Academic Theme */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 215 25% 15%;
+    
+    /* Primary - Deep Academic Blue */
+    --primary: 217 91% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 217 91% 45%;
+    
+    /* Secondary - Light Academic Blue */
+    --secondary: 217 100% 97%;
+    --secondary-foreground: 217 91% 35%;
+    
+    /* Research-specific colors */
+    --research-accent: 142 76% 36%;
+    --research-accent-foreground: 0 0% 98%;
+    --document-color: 262 83% 58%;
+    --web-color: 25 95% 53%;
+    
+    /* Neutrals */
+    --muted: 217 32% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 217 32% 91%;
+    --input: 217 32% 94%;
+    --ring: 217 91% 35%;
+    
+    /* Cards and surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 215 25% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --popover-foreground: 215 25% 15%;
+    
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 35%), hsl(217 91% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(217 100% 97%), hsl(220 100% 95%));
+    --gradient-accent: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(217 91% 35% / 0.1);
+    --shadow-medium: 0 4px 16px -4px hsl(217 91% 35% / 0.15);
+    --shadow-strong: 0 8px 32px -8px hsl(217 91% 35% / 0.2);
+    --shadow-glow: 0 0 24px hsl(217 91% 45% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Layout and spacing */
+    --radius: 0.75rem;
+    
+    /* Sidebar colors */
+    --sidebar-background: 217 100% 98%;
+    --sidebar-foreground: 215 25% 15%;
+    --sidebar-primary: 217 91% 35%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 217 100% 96%;
+    --sidebar-accent-foreground: 217 91% 35%;
+    --sidebar-border: 217 32% 91%;
+    --sidebar-ring: 217 91% 35%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Base colors - Dark Academic Theme */
+    --background: 215 28% 8%;
+    --foreground: 217 100% 97%;
+    
+    /* Primary - Bright Academic Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 215 28% 8%;
+    --primary-glow: 217 91% 70%;
+    
+    /* Secondary - Dark Academic Blue */
+    --secondary: 217 50% 15%;
+    --secondary-foreground: 217 100% 97%;
+    
+    /* Research-specific colors - Dark mode */
+    --research-accent: 142 76% 50%;
+    --research-accent-foreground: 215 28% 8%;
+    --document-color: 262 83% 70%;
+    --web-color: 25 95% 65%;
+    
+    /* Neutrals - Dark */
+    --muted: 217 25% 12%;
+    --muted-foreground: 217 15% 65%;
+    --border: 217 25% 18%;
+    --input: 217 25% 15%;
+    --ring: 217 91% 60%;
+    
+    /* Cards and surfaces - Dark */
+    --card: 217 25% 10%;
+    --card-foreground: 217 100% 97%;
+    --popover: 217 25% 10%;
+    --popover-foreground: 217 100% 97%;
+    
+    /* Status colors - Dark */
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 215 28% 8%;
+    --success: 142 76% 50%;
+    --success-foreground: 215 28% 8%;
+    --warning: 38 92% 65%;
+    --warning-foreground: 215 28% 8%;
+    
+    /* Sidebar colors - Dark */
+    --sidebar-background: 217 28% 6%;
+    --sidebar-foreground: 217 100% 97%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 215 28% 8%;
+    --sidebar-accent: 217 25% 12%;
+    --sidebar-accent-foreground: 217 100% 97%;
+    --sidebar-border: 217 25% 18%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
